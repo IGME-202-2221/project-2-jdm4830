@@ -143,4 +143,6 @@ public abstract class Agent : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, personalSpace);
     }
+
+
 }

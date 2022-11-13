@@ -20,6 +20,13 @@ public class AgentManager : MonoBehaviour
     public TagPlayer tagPlayerPrefab;
     public int numTagPlayers = 10;
 
+    public int countdownTime = 5;
+
+    [HideInInspector]
+    public TagPlayer currentItPlayer;
+
+
+
 
     private void Awake()
     {
@@ -47,6 +54,8 @@ public class AgentManager : MonoBehaviour
         {
             tagPlayers.Add(Spawn(tagPlayerPrefab));
         }
+
+        tagPlayers[0].Tag();
     }
 
 
@@ -57,5 +66,30 @@ public class AgentManager : MonoBehaviour
 
         return Instantiate(prefabToSpawn, new Vector3(xPos, yPos), Quaternion.identity);
 
+    }
+
+    public TagPlayer GetClosestTagPlayer(TagPlayer sourcePlayer)
+    {
+        float minDistance = float.MaxValue;
+        TagPlayer closestPlayer = null;
+        foreach(TagPlayer other in tagPlayers)
+        {
+            float sqrDistance = 
+                Vector3.SqrMagnitude(sourcePlayer.physicsObject.Position - other.physicsObject.Position);
+
+            if(sqrDistance < float.Epsilon)
+            {
+                // this is the sourcePlayer
+                continue;
+            }
+
+            if(sqrDistance < minDistance)
+            {
+                closestPlayer = other;
+                minDistance = sqrDistance;
+            }
+        }
+
+        return closestPlayer;
     }
 }
