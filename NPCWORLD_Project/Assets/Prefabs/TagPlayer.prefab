@@ -131,11 +131,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mass: 2
-  bounceOffWalls: 1
+  bounceOffWalls: 0
   useGravity: 0
   useFriction: 0
   frictionCoeff: 0.7
-  position: {x: 0, y: 0, z: 0}
   radius: 0.25
 --- !u!114 &2452377554051242337
 MonoBehaviour:
@@ -154,3 +153,4 @@ MonoBehaviour:
   maxForce: 5
   maxWanderAngle: 45
   maxWanderChangePerSecond: 10
+  personalSpace: 1

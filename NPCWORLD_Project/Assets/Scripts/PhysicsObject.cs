@@ -25,6 +25,7 @@ public class PhysicsObject : MonoBehaviour
 
     //public Vector3 Velocity => velocity;
     //Same thing above as below, just single line. ONLY for Get property
+    
     public Vector3 Velocity
     {
         get { return velocity; }
@@ -36,12 +37,8 @@ public class PhysicsObject : MonoBehaviour
         get { return direction; }
     }
 
-    public Vector3 position = Vector3.zero;
-    public Vector3 Position
-    {
-        get { return position; }
-        set { position = value; }
-    }
+    //public Vector3 position = Vector3.zero;
+    public Vector3 Position => transform.position;
 
     public float radius = 1f;
 
