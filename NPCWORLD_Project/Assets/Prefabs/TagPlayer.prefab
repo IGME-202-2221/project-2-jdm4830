@@ -154,3 +154,8 @@ MonoBehaviour:
   maxWanderAngle: 45
   maxWanderChangePerSecond: 10
   personalSpace: 1
+  visionDistance: 4
+  spriteRenderer: {fileID: 6945338017531163328}
+  itSprite: {fileID: 21300000, guid: 36bbb425bb6158a4888edcf4196457e0, type: 3}
+  notItSprite: {fileID: 21300000, guid: ce96f25c748b2d34eba15cacde40ce8d, type: 3}
+  countingSprite: {fileID: 21300000, guid: 8585a6930ff9cea49ba35018fef8c874, type: 3}

@@ -107,6 +107,21 @@ public abstract class Agent : MonoBehaviour
         }
     }
 
+    protected void Seek(Agent targetAgent, float weight = 1f)
+    {
+        Seek(targetAgent.physicsObject.Position, weight);
+    }
+
+    protected void Seek(GameObject targetObject, float weight = 1f)
+    {
+        Seek(targetObject.transform.position, weight);
+    }
+
+    protected void Seek(PhysicsObject targetObject, float weight = 1f)
+    {
+        Seek(targetObject.Position, weight);
+    }
+
     public Vector3 GetFuturePosition(float timeToLookAhead = 1f)
     {
         return physicsObject.Position + physicsObject.Velocity * timeToLookAhead;
