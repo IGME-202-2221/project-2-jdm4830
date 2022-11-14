@@ -1,4 +1,4 @@
-# Project _NAME_
+# Project Race Against The Pac
 
 [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)
 
