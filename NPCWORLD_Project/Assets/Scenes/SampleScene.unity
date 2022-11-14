@@ -241,7 +241,9 @@ MonoBehaviour:
   minPosition: {x: -1, y: -1}
   edgePadding: 1
   tagPlayerPrefab: {fileID: 2452377554051242337, guid: 35db5513c06b48644bcd75a94703d330, type: 3}
-  numTagPlayers: 50
+  numTagPlayers: 10
+  countdownTime: 1
+  currentItPlayer: {fileID: 0}
 --- !u!4 &1095577911
 Transform:
   m_ObjectHideFlags: 0
