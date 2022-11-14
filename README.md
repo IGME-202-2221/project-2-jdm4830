@@ -11,81 +11,76 @@ _REPLACE OR REMOVE EVERYTING BETWEEN "\_"_
 
 ## Simulation Design
 
-_A brief explanation of your simulation._
+My simulation will be like pacman but not stuck on a horizontal/vertical only movement. The player will control pac-man and try to eat as many
+ghosts as they can. There will be another Agent as pacman also eating the ghosts. There will be a timer for a certain amount of time
+and by the end of it, the player has to eat mroe ghosts then the agent. The ghosts will also respawn after they are eaten in the center
+just like pacman.
 
 ### Controls
 
--   _List all of the actions the player can have in your simulation_
-    -   _Include how to preform each action ( keyboard, mouse, UI Input )_
-    -   _Include what impact an action has in the simulation ( if is could be unclear )_
+-   Player will move by WASD with keyboard input only, moving in any x/y direction.
+    -   Keyboard movement
+    -   The player will move the character to eat the ghosts
 
-## _Agent 1 Name_
+## Pac-Man
 
-_A brief explanation of this agent._
+This is the player controlled agent.
 
-### _State 1 Name_
+### Original State
 
-**Objective:** _A brief explanation of this state's objective._
+This is the state that the player starts out as in the beginning of the game
+
+#### Steering Behaviors
+
+- The player controls the player with WASD like normal, and moves at a normal speed!
+   
+#### State Transistions
+
+- This agent is in this state in the begeinning of the game. 
+   
+### Eating State
+
+This is the state when the player runs into the other ghosts. When they cross the ghost, they stop for 1 second, then can be controlled again.
+
+#### Steering Behaviors
+
+- Player controls pacman with WASD still, but will be slower moving the more ghosts you eat.
+   
+#### State Transistions
+
+- When eating a ghost, it transitions to this state.
+
+## Dark Pac-Man
+
+This is the AI controlled pacman, that is also trying to eat ghosts. It is trying to eat more than the player before time runs out.
+
+### Normal State
+
+Eat as many ghosts as they can before the timer ends
 
 #### Steering Behaviors
 
 - _List all behaviors used by this state_
-   - _If behavior has input data list it here_
-   - _eg, Flee - nearest Agent2_
-- Obstacles - _List all obstacle types this state avoids_
-- Seperation - _List all agents this state seperates from_
+- Obstacles - Avoids the pillar objects
+- Seperation -Seperates from the player
    
 #### State Transistions
 
-- _List all the ways this agent can transition to this state_
-   - _eg, When this agent gets within range of Agent2_
-   - _eg, When this agent has reached target of State2_
+- Starts out the game in this state
    
-### _State 2 Name_
+### Eating State
 
-**Objective:** _A brief explanation of this state's objective._
+Eats a ghost. Speeds up after each ghost is eaten. Opposite of the player state transition (slowing down)
 
 #### Steering Behaviors
 
-- _List all behaviors used by this state_
-- Obstacles - _List all obstacle types this state avoids_
-- Seperation - _List all agents this state seperates from_
+- State moves on its own
+- Obstacles - Goes through pillars
+- Seperation - Player Object
    
 #### State Transistions
 
-- _List all the ways this agent can transition to this state_
-
-## _Agent 2 Name_
-
-_A brief explanation of this agent._
-
-### _State 1 Name_
-
-**Objective:** _A brief explanation of this state's objective._
-
-#### Steering Behaviors
-
-- _List all behaviors used by this state_
-- Obstacles - _List all obstacle types this state avoids_
-- Seperation - _List all agents this state seperates from_
-   
-#### State Transistions
-
-- _List all the ways this agent can transition to this state_
-   
-### _State 2 Name_
-
-**Objective:** _A brief explanation of this state's objective._
-
-#### Steering Behaviors
-
-- _List all behaviors used by this state_
-- Obstacles - _List all obstacle types this state avoids_
-- Seperation - _List all agents this state seperates from_
-   
-#### State Transistions
-
-- _List all the ways this agent can transition to this state_
+- Runs into a ghost
 
 ## Sources
 
@@ -94,7 +89,7 @@ _A brief explanation of this agent._
 
 ## Make it Your Own
 
-- _List out what you added to your game to make it different for you_
+- I will make it my own by racing another pacman version of the player. The AI will speed up from each ghost it eats. The player will slow down with each ghost it eats. There will be pillars that the AI dodges. Ghosts will also respawn in the center after being eaten by the player or enemy AI.
 - _If you will add more agents or states make sure to list here and add it to the documention above_
 - _If you will add your own assets make sure to list it here and add it to the Sources section
 
