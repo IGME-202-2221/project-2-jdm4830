@@ -40,6 +40,8 @@ public class PhysicsObject : MonoBehaviour
     //public Vector3 position = Vector3.zero;
     public Vector3 Position => transform.position;
 
+    public Vector3 Right => transform.right;
+
     public float radius = 1f;
 
     // Start is called before the first frame update

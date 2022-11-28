@@ -25,7 +25,8 @@ public class AgentManager : MonoBehaviour
     [HideInInspector]
     public TagPlayer currentItPlayer;
 
-
+    [HideInInspector]
+    public List<Agent> agents;
 
 
     private void Awake()
