@@ -2,8 +2,6 @@
 
 [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)
 
-_REPLACE OR REMOVE EVERYTING BETWEEN "\_"_
-
 ### Student Info
 
 -   Name: Jordan Mazza
@@ -60,7 +58,6 @@ Eat as many ghosts as they can before the timer ends
 
 #### Steering Behaviors
 
-- _List all behaviors used by this state_
 - Obstacles - Avoids the pillar objects
 - Seperation -Seperates from the player
    
@@ -84,20 +81,20 @@ Eats a ghost. Speeds up after each ghost is eaten. Opposite of the player state 
 
 ## Sources
 
--   _List all project sources here –models, textures, sound clips, assets, etc._
--   _If an asset is from the Unity store, include a link to the page and the author’s name_
+-   BGM: PacMan Theme Remix - https://www.youtube.com/watch?v=qtZ0hl-unM4
 
 ## Make it Your Own
 
 - I will make it my own by racing another pacman version of the player. The AI will speed up from each ghost it eats. The player will slow down with each ghost it eats. There will be pillars that the AI dodges. Ghosts will also respawn in the center after being eaten by the player or enemy AI.
-- _If you will add more agents or states make sure to list here and add it to the documention above_
-- _If you will add your own assets make sure to list it here and add it to the Sources section
+- The player controls Pac Man. The AI controls dark pac man. Dark Pac Man has increased attributes like speed, turn angle, vision range, and distance. You have to beat dark pac man before the time limit runs out at eating the ghosts. Once the timer is done, whoever has the high score wins!
 
 ## Known Issues
 
-_List any errors, lack of error checking, or specific information that I need to know to run your program_
+-The timer does not function, netiher does the score for eating ghosts.
+-Could not get collission with ghosts with Pac Man & Dark Pac Man, which would cause the score to increase.
 
 ### Requirements not completed
 
-_If you did not complete a project requirement, notate that here_
+-My agents dont really have any varying behavior that I could get to work successfully... 
+-Could not get collission with ghosts with Pac Man & Dark Pac Man, which would cause the score to increase.
 
