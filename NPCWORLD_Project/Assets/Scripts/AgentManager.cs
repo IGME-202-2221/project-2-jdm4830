@@ -17,7 +17,8 @@ public class AgentManager : MonoBehaviour
 
     public float edgePadding = 1f;
 
-    public TagPlayer tagPlayerPrefab;
+    public TagPlayer tagPlayerPrefab2;
+    public TagPlayer tagPlayerPrefab3;
     public int numTagPlayers = 10;
 
     public int countdownTime = 5;
@@ -53,7 +54,8 @@ public class AgentManager : MonoBehaviour
 
         for(int i = 0; i < numTagPlayers; i++)
         {
-            tagPlayers.Add(Spawn(tagPlayerPrefab));
+            tagPlayers.Add(Spawn(tagPlayerPrefab2));
+            tagPlayers.Add(Spawn(tagPlayerPrefab3));
         }
 
         tagPlayers[0].Tag();
@@ -62,8 +64,8 @@ public class AgentManager : MonoBehaviour
 
     private T Spawn<T>(T prefabToSpawn) where T : Agent
     {
-        float xPos = Random.Range(minPosition.x, maxPosition.x);
-        float yPos = Random.Range(minPosition.y, maxPosition.y);
+        float xPos = Random.Range(-2, 2);
+        float yPos = Random.Range(-1, 2);
 
         return Instantiate(prefabToSpawn, new Vector3(xPos, yPos), Quaternion.identity);
 

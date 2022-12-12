@@ -152,7 +152,7 @@ public abstract class Agent : MonoBehaviour
         }
     }
 
-    protected void AvoidObstacle(Obstacle obstacle)
+    protected void AvoidObstacle(Wall obstacle)
     {
         //Get a vector from this agent, to the obstacle
         Vector3 toObstacle = obstacle.Position - physicsObject.Position;
@@ -167,7 +167,7 @@ public abstract class Agent : MonoBehaviour
         //Check if the obstacle is too far to the left or right
         float rightToObstacleDot = Vector3.Dot(physicsObject.Right, toObstacle);
 
-        if(Mathf.Abs(rightToObstacleDot) > physicsObject.radius + obstacle.radius)
+        if(Mathf.Abs(rightToObstacleDot) > physicsObject.radius + (obstacle.length))
         {
             return;
         }
@@ -204,7 +204,7 @@ public abstract class Agent : MonoBehaviour
 
     protected void AvoidAllObstacles()
     {
-        foreach(Obstacle obstacle in ObstacleManager.Instance.Obstacles)
+        foreach(Wall obstacle in WallManager.Instance.Walls)
         {
             AvoidObstacle(obstacle);
         }

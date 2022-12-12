@@ -158,9 +158,9 @@ MonoBehaviour:
   visionRange: 2
   visionDistance: 4
   spriteRenderer: {fileID: 6945338017531163328}
-  itSprite: {fileID: 21300000, guid: 36bbb425bb6158a4888edcf4196457e0, type: 3}
-  notItSprite: {fileID: 21300000, guid: ce96f25c748b2d34eba15cacde40ce8d, type: 3}
-  countingSprite: {fileID: 21300000, guid: 8585a6930ff9cea49ba35018fef8c874, type: 3}
+  itSprite: {fileID: 21300000, guid: 62e0040bd7c9a884fa48033e84614ad5, type: 3}
+  notItSprite: {fileID: 21300000, guid: ec400e4a97c498c4c8b5f0c4d5a1480b, type: 3}
+  countingSprite: {fileID: 21300000, guid: 346500beb54eb744cbc4997316396604, type: 3}
 --- !u!114 &3272840081942015332
 MonoBehaviour:
   m_ObjectHideFlags: 0

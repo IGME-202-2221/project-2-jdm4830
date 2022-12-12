@@ -8,7 +8,9 @@ public class TagPlayer : Agent
     {
         It,
         NotIt,
-        Counting
+        Counting,
+        Dead,
+        Alive
     }
 
     private TagState currentState = TagState.NotIt;
@@ -39,8 +41,8 @@ public class TagPlayer : Agent
                     //Tag the other target
                     targetPlayer.Tag();
 
-                    // Become not-it
-                    StateTransition(TagState.NotIt);
+                    // Become dead
+                    StateTransition(TagState.Dead);
                 }
                 else
                 {
@@ -80,6 +82,28 @@ public class TagPlayer : Agent
 
                 break;
             }
+            case TagState.Dead:
+            {
+                // Count down to 0, then become dead
+                countdownTimer -= Time.deltaTime;
+
+                if(countdownTimer <= -3f)
+                {
+                    StateTransition(TagState.Alive);
+                }
+                break;
+            }
+            case TagState.Alive:
+            {
+                // Count down to 0, then become it
+                countdownTimer -= Time.deltaTime;
+
+                if(countdownTimer <= 0f)
+                {
+                    StateTransition(TagState.NotIt);
+                }
+                break;
+            }
         }
 
         StayInBounds(4f);
@@ -112,6 +136,19 @@ public class TagPlayer : Agent
             case TagState.NotIt:
             {
                 // Transition from being it, to not it
+                spriteRenderer.sprite = notItSprite;
+                physicsObject.useFriction = false;
+                break;
+            }
+            case TagState.Dead:
+            {
+                countdownTimer = AgentManager.Instance.countdownTime;
+                spriteRenderer.sprite = null;
+                break;
+            }
+            case TagState.Alive:
+            {
+                countdownTimer = AgentManager.Instance.countdownTime;
                 spriteRenderer.sprite = notItSprite;
                 physicsObject.useFriction = false;
                 break;
